@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './App.css'
+import Checkout from './Checkout'
+import { auth } from './firebase'
+import Header from './Header'
+import Home from './Home'
+import Login from './Login'
+import { useStateValue } from './StateProvider'
 
 function App() {
+  const [{}, dispatch] = useStateValue()
+
+  useEffect(() => {
+    // will only run once when the app component loads...
+
+    auth.onAuthStateChanged((authUser) => {
+      console.log('THE USER IS >>> ', authUser)
+
+      if (authUser) {
+        // if user is logged in and refreshes page set user to logged in user
+
+        dispatch({
+          type: 'SET_USER',
+          user: authUser,
+        })
+      } else {
+        // if user is not logged in and refreshes page set user to null
+        dispatch({
+          type: 'SET_USER',
+          user: null,
+        })
+      }
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className='app'>
+        <Switch>
+          <Route path='/login'>
+            <Login />
+          </Route>
+          <Route path='/checkout'>
+            <Header />
+            <Checkout />
+          </Route>
+          <Route path='/'>
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
