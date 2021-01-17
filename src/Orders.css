@@ -1,0 +1,35 @@
+.orders {
+  padding: 20px 80px;
+}
+
+.orders > h1 {
+  margin: 30px 0;
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+  .orders > h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .orders {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+}
+
+@media (max-width: 479px) {
+}

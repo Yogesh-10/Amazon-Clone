@@ -1,0 +1,108 @@
+.payment {
+  background-color: white;
+}
+
+.payment__container > h1 {
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  background-color: rgb(234, 237, 237);
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__container > h1 a {
+  text-decoration: none;
+}
+
+.payment__section {
+  display: flex;
+  padding: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__title {
+  flex: 0.2;
+}
+
+.payment__address,
+.payment__items,
+.payment__details {
+  flex: 0.8;
+}
+
+.payment__details > form {
+  max-width: 400px;
+}
+
+.payment__details > h3 {
+  padding-bottom: 20px;
+}
+
+.payment__details > form > div > button {
+  background: #f0c14b;
+  border: 1px solid;
+  margin-top: 10px;
+  width: 100%;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 550;
+}
+
+.cardElement {
+  margin-top: 10px;
+}
+
+/* .payment__priceContainer {
+  margin-top: 30px;
+} */
+
+.FormGroup {
+  margin: 0 15px 20px;
+  padding: 0;
+  border-style: none;
+  background-color: lightgray;
+  will-change: opacity, transform;
+  /* box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #829fff; */
+  border-radius: 4px;
+}
+
+.FormRow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+  /* border-top: 1px solid #819efc; */
+}
+
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 12px 20px 20px 0;
+}
+
+/*  */
+@media (max-width: 500px) {
+  .payment__details > h3 {
+    display: none;
+  }
+  .payment__title {
+    flex-direction: column;
+  }
+  .payment__section {
+    flex-direction: column;
+  }
+  .FormGroup {
+    margin-top: 20px;
+  }
+}
