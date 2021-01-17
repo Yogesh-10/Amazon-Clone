@@ -1,9 +1,11 @@
 import React from 'react'
 import StarIcon from '@material-ui/icons/Star'
+import { useHistory } from 'react-router-dom'
 import './Product.css'
 import { useStateValue } from './StateProvider'
 
 const Product = ({ id, title, image, price, rating, alt }) => {
+  const history = useHistory()
   const [{ cart }, dispatch] = useStateValue()
 
   const addToCart = () => {
@@ -18,6 +20,7 @@ const Product = ({ id, title, image, price, rating, alt }) => {
         rating: rating,
       },
     })
+    history.push('/checkout')
   }
   return (
     <div className='product'>

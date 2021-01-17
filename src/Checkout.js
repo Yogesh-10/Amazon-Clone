@@ -16,7 +16,7 @@ const Checkout = () => {
         />
 
         <div>
-          <h3>Hello, {user?.email}</h3>
+          <h3>Hello, {user ? user?.email : 'Guest'}</h3>
           <h2 className='checkout__title'>Your Cart</h2>
           {cart.map((item, index) => (
             <CheckoutProduct
