@@ -43,7 +43,6 @@ body {
   .home {
     overflow: hidden;
     padding-bottom: 20px;
-    width: fit-content;
   }
   .home__image {
     margin-bottom: -50px;
