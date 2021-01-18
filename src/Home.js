@@ -1,16 +1,18 @@
 import React from 'react'
 import './Home.css'
+import ImageCarousel from './ImageCarousel'
 import Product from './Product'
 
 const Home = () => {
   return (
     <div className='home'>
       <div className='home__container'>
-        <img
+        {/* <img
           className='home__image'
           src='../images/amazon-carousel-2.jpg'
           alt='Product Carousel'
-        />
+        /> */}
+        <ImageCarousel />
 
         <div className='home__row'>
           <Product
