@@ -44,9 +44,32 @@ article.nextSlide {
   transform: translateX(100%);
 }
 
+.section-center {
+  /* margin: 0 auto; */
+  /* margin-top: 4rem; */
+  /* width: 80vw; */
+  height: 480px;
+  /* max-width: 1800px; */
+  text-align: center;
+  /* position: relative; */
+  display: flex;
+  overflow: hidden;
+}
+
 @media (max-width: 767px) {
   .prev,
   .next {
-    margin-bottom: 30px;
+    margin-bottom: 150px;
+  }
+  .section-center {
+    /* margin: 0 auto' */
+    /* margin-top: 4rem; */
+    /* width: 80vw; */
+    height: 150px;
+    /* max-width: 800px; */
+    text-align: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
   }
 }
