@@ -7,14 +7,10 @@ import Header from './Header'
 import Home from './Home'
 import Login from './Login'
 import Payment from './Payment'
-import { loadStripe } from '@stripe/stripe-js'
+// import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import { useStateValue } from './StateProvider'
 import Orders from './Orders'
-
-const promise = loadStripe(
-  'pk_test_51IAViEAA1be5IArzg6VXetKehDUHyAS0DQBmy02IFuz1GunOJZlSmJIPY1tjGTuuSIQ8NxFQ7Jrfo2ClsflsUSXu003StXNdOj'
-)
 
 function App() {
   const [{}, dispatch] = useStateValue()
